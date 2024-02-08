@@ -31,20 +31,36 @@ Consul     #CA2171
 <body>
     <script src="https://remarkjs.com/downloads/remark-0.14.0.min.js" type="text/javascript"></script>
     <script src="./assets/js/terraform.js" type="text/javascript"></script>
+    <style type="text/css">
+        .remark-code-line {
+            font-size: .9rem 
+        }
+    </style>
     <script>
        remark.macros.scale = function(percentage) {
            var url = this;
            return '<img src="' + url + '" style="width: ' + percentage + '" />';
-       };
+        };
         remark.macros.img = function(altText, width) {
             var url = this;
             return '<figure><img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />\n<figcaption>' + altText + '</figcaption></figure>';
         };
+        remark.macros.fontsize = function (size = "100%") {
+            var txt = this;
+            tag = "<span style=" + "'font-size:" + size + "'>" + txt + "</span>";
+            return tag
+        };
+
     // Place all of your files here
        sourceUrls = [
            'title.md',
-           'slide1.md',
-           'slide2.md',
+           's1-intro.md',
+           's2-environment.md',
+           's3-vault-init.md',
+           's4-dynamic-secrets-setup.md',
+           's5-dynamic-secrets-setup-2.md',
+           's6-dynamic-secrets-setup-3.md',
+           's7-conclusion.md',
            ]
 
        var xmlhttp = new XMLHttpRequest();
